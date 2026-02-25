@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Protegida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a73e8;
+        }
+        .user-info {
+            background-color: #e8f0fe;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .success {
+            color: #0f9d58;
+            font-weight: bold;
+        }
+        .logout-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✅ Página Protegida</h1>
+        <p class="success">¡Has accedido correctamente a contenido protegido!</p>
+        
+        <div class="user-info">
+            <h3>Información del usuario autenticado:</h3>
+            <p><strong>Usuario:</strong> {{ user.username }}</p>
+            <p><strong>Nombre completo:</strong> {{ user.full_name }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>ID:</strong> {{ user.id }}</p>
+            <p><strong>Estado:</strong> Activo</p>
+        </div>
+        
+        <h3>📋 Prueba de concepto completada:</h3>
+        <ul>
+            <li>✓ Registro de usuario con validaciones</li>
+            <li>✓ Hash seguro de contraseña (bcrypt)</li>
+            <li>✓ Login con generación de token JWT</li>
+            <li>✓ Página protegida con verificación de autenticación</li>
+        </ul>
+        
+        <button class="logout-btn" onclick="alert('Para cerrar sesión, elimina el token del cliente')">
+            Cerrar sesión
+        </button>
+    </div>
+</body>
+</html>
